@@ -1,0 +1,210 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Edukon | Create Your Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: radial-gradient(circle at bottom left, #eff6ff, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(37, 99, 235, 0.08);
+        }
+        .blue-gradient-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #imagePreview {
+            width: 100px;
+            height: 100px;
+            border-radius: 30px;
+            background-size: cover;
+            background-position: center;
+            border: 4px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        /* --- IPAD & UNIVERSAL RESPONSIVE FIX --- */
+
+/* 1. Prevent Horizontal Scroll (Screen se bahar nikalne se rokne ke liye) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. iPad Air / iPad Mini / Tablets (768px to 1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Navigation ko congested hone se bachayein */
+    nav {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Agar aapka main card flex-row hai, toh usse column kar den */
+    .glass-card {
+        flex-direction: column !important;
+        margin-top: 5rem;
+        border-radius: 25px !important;
+        width: 95% !important;
+    }
+
+    /* Left aur Right sections ko full width kar den */
+    .glass-card > div {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Info Panel (Right Side) ko iPad par thora chota ya hide karne ke liye */
+    .blue-gradient {
+        min-height: auto !important;
+    }
+
+    /* Inputs ko iPad screen ke mutabiq adjust karein */
+    input {
+        font-size: 16px !important; /* Zoom-in issue fix karne ke liye */
+    }
+}
+
+/* 3. Mobile Phones (640px and below) */
+@media only screen and (max-width: 640px) {
+    .glass-card {
+        margin-top: 4rem;
+        padding: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Grid columns ko single column kar den */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Images & Containers Fix */
+img, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+    </style>
+</head>
+
+<body class="p-6">
+
+    <nav class="fixed top-0 w-full z-50 py-6 px-6 md:px-20 flex justify-between items-center bg-white/80 backdrop-blur-md border-b border-slate-100">
+        <a href="index.html" class="text-2xl font-black tracking-tighter uppercase">EDUKON<span class="text-blue-600">.prime</span></a>
+        <div class="hidden md:flex gap-10 items-center">
+            <a href="login.html" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-blue-600">Login</a>
+            <a href="signup.html" class="bg-blue-600 text-white px-8 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest">Join Now</a>
+        </div>
+    </nav>
+
+    <div class="w-full max-w-lg mt-20">
+        <div class="glass-card p-10 md:p-14">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-black text-slate-900 tracking-tight italic">Create Account <span class="text-blue-600">.</span></h2>
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[3px] mt-2">Start your journey today</p>
+            </div>
+
+            <form id="signupForm" class="space-y-5">
+                <div class="avatar-upload relative w-[100px] mx-auto mb-8">
+                    <div id="imagePreview" style="background-image: url('https://ui-avatars.com/api/?name=User&background=f1f5f9&color=cbd5e1');"></div>
+                    <label for="imageUpload" class="absolute bottom-[-5px] right-[-5px] bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center cursor-pointer border-4 border-white hover:bg-slate-900 transition">
+                        <i class="fa-solid fa-camera text-xs"></i>
+                    </label>
+                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" class="hidden" />
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" id="fName" placeholder="First Name" required class="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-blue-600 transition">
+                    <input type="text" id="lName" placeholder="Last Name" required class="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-blue-600 transition">
+                </div>
+
+                <input type="email" id="email" placeholder="Email Address" required class="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-blue-600 transition">
+                
+                <div class="relative">
+                    <input type="password" id="password" placeholder="Create Password" required class="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 text-sm outline-none focus:border-blue-600 transition">
+                    <i class="fa-solid fa-lock absolute right-4 top-5 text-slate-200"></i>
+                </div>
+
+                <div class="flex items-start gap-3 px-2">
+                    <input type="checkbox" class="mt-1 accent-blue-600" required>
+                    <p class="text-[11px] text-slate-500 leading-relaxed font-bold">I agree to the <span class="text-blue-600">Terms of Service</span>.</p>
+                </div>
+
+                <button type="submit" class="w-full blue-gradient-btn text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs shadow-xl shadow-blue-100">
+                    Create My Account
+                </button>
+            </form>
+
+            <p class="text-center mt-10 text-slate-400 text-xs font-bold">
+                Already a member? <a href="login.html" class="text-blue-600 uppercase tracking-widest ml-2 hover:underline">Log In</a>
+            </p>
+        </div>
+    </div>
+
+    <a href="https://wa.me/923288481557" target="_blank" class="fixed bottom-10 right-10 z-[100] bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Image Preview
+        document.getElementById('imageUpload').onchange = function () {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('imagePreview').style.backgroundImage = 'url('+e.target.result+')';
+            };
+            reader.readAsDataURL(this.files[0]);
+        };
+
+        // Form Logic
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const fName = document.getElementById('fName').value;
+            const lName = document.getElementById('lName').value;
+            const email = document.getElementById('email').value;
+
+            const newUser = {
+                name: fName + " " + lName,
+                email: email,
+                date: new Date().toLocaleDateString()
+            };
+
+            // Save to LocalStorage
+            let students = JSON.parse(localStorage.getItem('edukonStudents')) || [];
+            students.push(newUser);
+            localStorage.setItem('edukonStudents', JSON.stringify(students));
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Account Created!',
+                text: 'Welcome, ' + fName + '!',
+                confirmButtonColor: '#2563eb'
+            }).then(() => {
+                window.location.href = "login.html"; 
+            });
+        });
+    </script>
+    <a href="admin.html" class="fixed bottom-32 right-10 z-[100] bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-blue-600 transition-all duration-300 group">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="absolute right-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Admin View</span>
+</a>
+
+</body>
+</html>

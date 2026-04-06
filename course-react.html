@@ -1,0 +1,426 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev Masterclass | Edukon 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050810; }
+        
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(15px); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border-radius: 30px;
+        }
+
+        .video-container {
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.25);
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .playlist-item {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .playlist-item.active {
+            background: rgba(37, 99, 235, 0.1);
+            border-left-color: #2563eb;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* --- IPAD & UNIVERSAL RESPONSIVE FIX --- */
+
+/* 1. Prevent Horizontal Scroll (Screen se bahar nikalne se rokne ke liye) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. iPad Air / iPad Mini / Tablets (768px to 1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Navigation ko congested hone se bachayein */
+    nav {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Agar aapka main card flex-row hai, toh usse column kar den */
+    .glass-card {
+        flex-direction: column !important;
+        margin-top: 5rem;
+        border-radius: 25px !important;
+        width: 95% !important;
+    }
+
+    /* Left aur Right sections ko full width kar den */
+    .glass-card > div {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Info Panel (Right Side) ko iPad par thora chota ya hide karne ke liye */
+    .blue-gradient {
+        min-height: auto !important;
+    }
+
+    /* Inputs ko iPad screen ke mutabiq adjust karein */
+    input {
+        font-size: 16px !important; /* Zoom-in issue fix karne ke liye */
+    }
+}
+
+/* 3. Mobile Phones (640px and below) */
+@media only screen and (max-width: 640px) {
+    .glass-card {
+        margin-top: 4rem;
+        padding: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Grid columns ko single column kar den */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Images & Containers Fix */
+img, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+    </style>
+</head>
+<body class="text-white">
+
+        <a href="index.html" class="text-2xl font-black tracking-tighter uppercase">EDUKON<span class="text-blue-600">.prime</span></a>
+    
+</a>
+        <div class="flex gap-4">
+            <div class="h-8 w-px bg-white/10 mx-2"></div>
+        </div>
+    </nav>
+<section class="pt-40 pb-20 px-6 md:px-20 bg-white text-slate-900">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- LEFT -->
+    <div>
+      <span class="inline-block bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-xs font-bold mb-4">
+        🚀 Web Development Course
+      </span>
+
+      <h1 class="text-4xl md:text-5xl font-black leading-tight mb-6">
+        Become a <span class="text-blue-600">Professional Web Developer</span><br>
+        Build Real Projects & Get Hired
+      </h1>
+
+      <p class="text-slate-500 mb-6">
+        Learn HTML, CSS, JavaScript, React & Backend with real-world projects and mentorship.
+      </p>
+
+      <div class="flex gap-4 mb-8">
+        <button class="bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition">
+          Start Learning
+        </button>
+        <button class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition">
+          View Courses
+        </button>
+      </div>
+
+      <!-- STATS -->
+      <div class="flex gap-10">
+        <div>
+          <h3 class="text-blue-600 font-black text-xl">10K+</h3>
+          <p class="text-sm text-slate-500">Students</p>
+        </div>
+        <div>
+          <h3 class="text-blue-600 font-black text-xl">50+</h3>
+          <p class="text-sm text-slate-500">Courses</p>
+        </div>
+        <div>
+          <h3 class="text-blue-600 font-black text-xl">4.9★</h3>
+          <p class="text-sm text-slate-500">Rating</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div>
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+           class="rounded-[30px] shadow-2xl shadow-blue-200">
+    </div>
+
+  </div>
+</section>
+    <main class="pt-32 pb-20 px-4 md:px-10 max-w-[1600px] mx-auto">
+        <div class="grid lg:grid-cols-12 gap-8">
+            
+            <div class="lg:col-span-8 space-y-8">
+                <div class="video-container relative group" data-aos="fade-up">
+                    <iframe 
+                        class="w-full aspect-video rounded-[40px]" 
+                        src="https://www.youtube.com/embed/pEbLp4ACl-g" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="p-8 glass-card" data-aos="fade-up">
+                    <div class="flex flex-wrap justify-between items-start gap-4 mb-6">
+                        <div>
+                            <span class="bg-blue-600/20 text-blue-400 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-lg mb-4 inline-block">Module 01: Foundations</span>
+                            <h1 class="text-3xl md:text-5xl font-black tracking-tighter">Web Development Roadmap 2026</h1>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-solid fa-share-nodes"></i></button>
+                            <button class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-blue-600 transition"><i class="fa-regular fa-bookmark"></i></button>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-8">
+                        Is class mein hum web development ka mukammal khaka samjhenge. VS Code install karne se lekar pehla HTML tag likhne tak ka safar yahan se shuru hota hai. 
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-8 border-t border-white/5">
+                        <a href="#" class="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-2xl hover:bg-white/10 transition">
+                            <i class="fa-solid fa-file-code text-blue-500"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Download Source Code</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-2xl hover:bg-white/10 transition">
+                            <i class="fa-solid fa-file-pdf text-red-500"></i>
+                            <span class="text-xs font-bold uppercase tracking-widest">Lecture Notes (PDF)</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4">
+                <div class="glass-card p-6 sticky top-32">
+                    <h3 class="text-xl font-black mb-6 flex justify-between items-center">
+                        Course Content
+                        <span class="text-[10px] bg-white/10 px-3 py-1 rounded-full font-normal">3 Videos</span>
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="playlist-item active p-4 rounded-2xl flex gap-4 cursor-pointer">
+                            <div class="w-20 aspect-video bg-slate-800 rounded-lg overflow-hidden relative">
+                                <img src="https://i.ytimg.com/vi/pEbLp4ACl-g/mqdefault.jpg" class="w-full h-full object-cover opacity-60">
+                                <i class="fa-solid fa-play absolute inset-0 flex items-center justify-center text-[10px]"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-bold mb-1 leading-tight">Introduction & Career Path</h4>
+                                <p class="text-[10px] text-slate-500">08:42 • Completed</p>
+                            </div>
+                        </div>
+
+                        <a href="https://youtu.be/HGTJBPNC-Gw" class="playlist-item p-4 rounded-2xl flex gap-4 hover:bg-white/5 transition">
+                            <div class="w-20 aspect-video bg-slate-800 rounded-lg overflow-hidden">
+                                <img src="https://i.ytimg.com/vi/HGTJBPNC-Gw/mqdefault.jpg" class="w-full h-full object-cover opacity-60">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-bold mb-1 leading-tight">HTML & CSS Masterclass</h4>
+                                <p class="text-[10px] text-slate-500">04:12:00 • Bootcamp</p>
+                            </div>
+                        </a>
+
+                        <a href="https://youtu.be/EURiBsZSc7c" class="playlist-item p-4 rounded-2xl flex gap-4 hover:bg-white/5 transition">
+                            <div class="w-20 aspect-video bg-slate-800 rounded-lg overflow-hidden">
+                                <img src="https://i.ytimg.com/vi/EURiBsZSc7c/mqdefault.jpg" class="w-full h-full object-cover opacity-60">
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="text-xs font-bold mb-1 leading-tight">Building Real Websites</h4>
+                                <p class="text-[10px] text-slate-500">24:15 • Project Based</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="mt-10 p-6 bg-blue-600 rounded-[30px] text-center">
+                        <p class="text-[10px] font-black uppercase tracking-[3px] mb-2">Need Help?</p>
+                        <h4 class="text-sm font-bold mb-4">Join our Student Discord</h4>
+                        <button class="bg-white text-blue-600 px-6 py-2 rounded-full text-[10px] font-black uppercase">Join Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="py-32 bg-white text-slate-900 rounded-t-[80px] md:rounded-t-[120px]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="text-blue-600 font-black text-[10px] uppercase tracking-[10px] mb-4 block">The Journey</span>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter">Your Learning <span class="text-gradient italic">Roadmap.</span></h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="p-8 bg-slate-50 rounded-[40px] border border-slate-100 hover:border-blue-200 transition" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-black mb-6 shadow-lg shadow-blue-200">1</div>
+                    <h3 class="text-xl font-black mb-3">Setup & Structure</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">VS Code configuration, Extensions, aur HTML5 ke sematic tags ka mukammal use.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[40px] border border-slate-100 hover:border-blue-200 transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black mb-6">2</div>
+                    <h3 class="text-xl font-black mb-3">Styling Mastery</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">CSS Flexbox, Grid, aur Modern Animations jo aapki site ko premium banati hain.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[40px] border border-slate-100 hover:border-blue-200 transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-2xl flex items-center justify-center font-black mb-6">3</div>
+                    <h3 class="text-xl font-black mb-3">Responsiveness</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Media Queries aur Mobile-first design approach seekhna sabse zaroori hai.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-[40px] border border-slate-100 hover:border-blue-200 transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-green-500 text-white rounded-2xl flex items-center justify-center font-black mb-6 shadow-lg shadow-green-100">4</div>
+                    <h3 class="text-xl font-black mb-3">Live Deployment</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Apni website ko Github aur Netlify par live karna aur portfolio banana.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="py-32 px-6 md:px-20 bg-[#050810] text-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT -->
+    <div data-aos="fade-right">
+      <span class="text-blue-500 font-black text-[10px] uppercase tracking-[6px] mb-4 block">
+        Contact Us
+      </span>
+
+      <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
+        Let’s Build Something <span class="text-blue-500">Amazing Together.</span>
+      </h2>
+
+      <p class="text-slate-400 mb-8">
+        Have a question or want to start your journey? Reach out to us and our team will get back to you quickly.
+      </p>
+
+      <div class="space-y-4">
+        <p class="flex items-center gap-3 text-slate-300">
+          <i class="fa-solid fa-envelope text-blue-500"></i> support@edukon.com
+        </p>
+        <p class="flex items-center gap-3 text-slate-300">
+          <i class="fa-solid fa-phone text-blue-500"></i> +92 300 1234567
+        </p>
+        <p class="flex items-center gap-3 text-slate-300">
+          <i class="fa-solid fa-location-dot text-blue-500"></i> Pakistan
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="glass-card p-8" data-aos="fade-left">
+      <form class="space-y-6">
+
+        <div>
+          <input type="text" placeholder="Your Name"
+            class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 outline-none text-sm">
+        </div>
+
+        <div>
+          <input type="email" placeholder="Your Email"
+            class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 outline-none text-sm">
+        </div>
+
+        <div>
+          <textarea rows="4" placeholder="Your Message"
+            class="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-blue-500 outline-none text-sm"></textarea>
+        </div>
+
+        <button class="w-full bg-blue-600 py-4 rounded-xl font-black uppercase text-sm hover:bg-blue-700 transition">
+          Send Message
+        </button>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+<footer class="bg-[#050810] border-t border-white/5 py-16 px-6 md:px-20 text-white">
+
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-10">
+
+    <!-- LOGO -->
+    <div>
+      <h2 class="text-2xl font-black mb-4">EDUKON<span class="text-blue-600">.</span></h2>
+      <p class="text-slate-400 text-sm">
+        Learn modern skills and build real-world projects with Edukon Academy.
+      </p>
+    </div>
+
+    <!-- LINKS -->
+    <div>
+      <h4 class="font-bold mb-4">Quick Links</h4>
+      <ul class="space-y-2 text-slate-400 text-sm">
+        <li><a href="index.html" class="hover:text-white">Home</a></li>
+        <li><a href="course" class="hover:text-white">Courses</a></li>
+        <li><a href="acadmey-detail.html" class="hover:text-white">About</a></li>
+        <li><a href="contact" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- COURSES -->
+    <div>
+      <h4 class="font-bold mb-4">Courses</h4>
+      <ul class="space-y-2 text-slate-400 text-sm">
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+        <li>Digital Marketing</li>
+        <li>Freelancing</li>
+      </ul>
+    </div>
+
+    <!-- SOCIAL -->
+    <div>
+      <h4 class="font-bold mb-4">Follow Us</h4>
+      <div class="flex gap-4">
+        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 transition">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 transition">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center hover:bg-blue-600 transition">
+          <i class="fa-brands fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="text-center mt-12 pt-6 border-t border-white/5">
+    <p class="text-slate-500 text-xs uppercase tracking-[4px]">
+      © 2026 Edukon — All Rights Reserved
+    </p>
+  </div>
+
+</footer>
+    <footer class="py-12 bg-white text-center border-t border-slate-100">
+        <p class="text-slate-400 text-[10px] font-black uppercase tracking-[10px]">Edukon Academy © 2026 — Batch 02</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+    <a href="https://wa.me/923288481557" target="_blank" class="fixed bottom-10 right-10 z-[100] bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all duration-300 group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-20 bg-white text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Support</span>
+</a>
+<a href="admin.html" class="fixed bottom-32 right-10 z-[100] bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-blue-600 transition-all duration-300 group">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="absolute right-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Admin View</span>
+</a>
+</body>
+</html>

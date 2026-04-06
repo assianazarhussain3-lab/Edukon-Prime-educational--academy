@@ -1,0 +1,306 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design Masterclass | Edukon</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .hero-gradient { background: radial-gradient(circle at top right, #eff6ff, transparent); }
+          /* --- IPAD & UNIVERSAL RESPONSIVE FIX --- */
+
+/* 1. Prevent Horizontal Scroll (Screen se bahar nikalne se rokne ke liye) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. iPad Air / iPad Mini / Tablets (768px to 1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Navigation ko congested hone se bachayein */
+    nav {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Agar aapka main card flex-row hai, toh usse column kar den */
+    .glass-card {
+        flex-direction: column !important;
+        margin-top: 5rem;
+        border-radius: 25px !important;
+        width: 95% !important;
+    }
+
+    /* Left aur Right sections ko full width kar den */
+    .glass-card > div {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Info Panel (Right Side) ko iPad par thora chota ya hide karne ke liye */
+    .blue-gradient {
+        min-height: auto !important;
+    }
+
+    /* Inputs ko iPad screen ke mutabiq adjust karein */
+    input {
+        font-size: 16px !important; /* Zoom-in issue fix karne ke liye */
+    }
+}
+
+/* 3. Mobile Phones (640px and below) */
+@media only screen and (max-width: 640px) {
+    .glass-card {
+        margin-top: 4rem;
+        padding: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Grid columns ko single column kar den */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Images & Containers Fix */
+img, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+} 
+    </style>
+</head>
+<body class="bg-white">
+
+    <nav class="flex justify-between items-center px-6 md:px-20 py-5 sticky top-0 z-50 glass-nav border-b border-slate-100 shadow-sm">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                <i class="fa-solid fa-graduation-cap text-xl"></i>
+            </div>
+            <a href="index.html" 
+   class="text-2xl font-black tracking-tighter uppercase hover:opacity-80 transition">
+  EDUKON<span class="text-blue-600">.prime</span>
+</a>
+        </div>
+        <div class="hidden md:flex gap-10 text-xs font-black uppercase tracking-widest text-slate-500">
+            <a href="index.html" class="hover:text-blue-600 transition">Academy</a>
+            <a href="#" class="hover:text-blue-600 transition">Curriculum</a>
+            <a href="#" class="hover:text-blue-600 transition">Schedule</a>
+        </div>
+        <a href="index.html" class="bg-slate-900 text-white px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-blue-600 transition shadow-xl">Back Home</a>
+    </nav>
+
+    <section class="py-24 px-6 md:px-20 hero-gradient">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+            <div data-aos="fade-right">
+                <div class="inline-flex items-center gap-3 bg-blue-50 text-blue-600 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-[3px] mb-8 border border-blue-100">
+                    <span class="w-2 h-2 bg-blue-600 rounded-full animate-ping"></span> Most Popular Course
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black text-slate-900 mb-8 leading-[0.95] tracking-tighter">
+                    UI/UX Design <br> <span class="text-blue-600 italic">Masterclass.</span>
+                </h1>
+                <p class="text-slate-500 text-xl mb-12 max-w-lg leading-relaxed">
+                    Zero se Hero baniye design ki duniya mein. Hum aapko sikhayenge wo sab kuch jo aik top designer ko chahiye hota hai.
+                </p>
+                <div class="flex flex-wrap items-center gap-6">
+                    <a href="#enroll" class="bg-blue-600 text-white px-12 py-6 rounded-[25px] font-black uppercase text-xs tracking-widest shadow-2xl shadow-blue-200 hover:scale-105 transition-all">Enroll for $29.00</a>
+                    <div class="flex items-center gap-4">
+                        <div class="flex -space-x-4">
+                            <img src="https://i.pravatar.cc/100?img=1" class="w-12 h-12 rounded-full border-4 border-white">
+                            <img src="https://i.pravatar.cc/100?img=2" class="w-12 h-12 rounded-full border-4 border-white">
+                            <img src="https://i.pravatar.cc/100?img=3" class="w-12 h-12 rounded-full border-4 border-white">
+                        </div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">500+ Enrolled</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1000" class="rounded-[80px] shadow-2xl border-[20px] border-white w-full h-[600px] object-cover">
+                <div class="absolute top-10 -right-10 bg-white p-8 rounded-[40px] shadow-2xl border border-slate-100 hidden md:block">
+                    <i class="fa-solid fa-bolt text-4xl text-orange-400 mb-4 block"></i>
+                    <p class="text-2xl font-black text-slate-900">3 Months</p>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase">Fast Track</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-20 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="bg-blue-100 text-blue-600 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 inline-block">Curriculum 2026</span>
+            <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">Your Learning <span class="text-blue-600 italic">Journey</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            
+            <div class="video-card bg-white rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 group">
+                <div class="relative aspect-video overflow-hidden bg-slate-900">
+                    <img src="https://i.ytimg.com/vi/EURiBsZSc7c/maxresdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                    <a href="https://youtu.be/EURiBsZSc7c?si=FtIf7EiRqi4a1IQG" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl group-hover:scale-110 transition duration-500">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="p-10">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Class 01</span>
+                        <span class="text-slate-400 text-xs font-bold"><i class="fa-regular fa-clock mr-1"></i> 05:55</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-4">Figma Basics: Introduction for Beginners</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">Figma ke tools aur interface ko samajhne ke liye pehli class. Sikhiye ke kaise aap bilkul free mein design start kar sakte hain.</p>
+                    <a href="https://youtu.be/EURiBsZSc7c?si=FtIf7EiRqi4a1IQG" target="_blank" class="block text-center bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-blue-600 transition">Watch on YouTube</a>
+                </div>
+            </div>
+
+            <div class="video-card bg-white rounded-[40px] overflow-hidden shadow-2xl border border-slate-100 group">
+                <div class="relative aspect-video overflow-hidden bg-slate-900">
+                    <img src="https://i.ytimg.com/vi/9QzpYI2988Y/maxresdefault.jpg" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                    <a href="https://youtu.be/9QzpYI2988Y?si=79nAA3uARVQFe8Mh" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl group-hover:scale-110 transition duration-500">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                    </a>
+                </div>
+                <div class="p-10">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-blue-600 font-bold text-xs uppercase tracking-widest">Class 02</span>
+                        <span class="text-slate-400 text-xs font-bold"><i class="fa-regular fa-clock mr-1"></i> 10:30</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-4">What is UX? | User Experience Explained</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-8">UX Design kya hota hai? Real life examples (wallet, door, mobile apps) ke saath seekhen user ki psychology ko kaise samjha jata hai.</p>
+                    <a href="https://youtu.be/9QzpYI2988Y?si=79nAA3uARVQFe8Mh" target="_blank" class="block text-center bg-slate-900 text-white py-4 rounded-2xl font-bold hover:bg-blue-600 transition">Watch on YouTube</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+<section class="py-24 px-6 md:px-20 bg-slate-900 text-white overflow-hidden relative">
+    <div class="absolute top-0 right-0 w-80 h-80 bg-purple-600/20 rounded-full blur-[120px]"></div>
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        
+        <div data-aos="fade-right">
+            <span class="bg-purple-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Design Like a Pro</span>
+            <h2 class="text-4xl md:text-7xl font-black mb-8 leading-tight tracking-tighter">
+                Create a <span class="text-purple-500">Hero Section</span> from Scratch
+            </h2>
+            <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+                Nikhil Pawar ke is tutorial mein aap seekhenge ke kaise Mobbin jaise resources use karke ek premium website layout banaya jata hai.
+            </p>
+
+            <div class="space-y-6 mb-12">
+                <div class="flex items-center gap-4 border-l-4 border-purple-600 pl-6 py-2 bg-white/5 rounded-r-2xl transition hover:bg-white/10 cursor-pointer">
+                    <span class="text-xs font-bold text-slate-500">[00:01:13]</span>
+                    <p class="font-bold">Using Mobbin for Inspiration</p>
+                </div>
+                <div class="flex items-center gap-4 border-l-4 border-purple-600 pl-6 py-2 bg-white/5 rounded-r-2xl transition hover:bg-white/10 cursor-pointer">
+                    <span class="text-xs font-bold text-slate-500">[00:03:35]</span>
+                    <p class="font-bold">Figma Frame & Layout Presets</p>
+                </div>
+                <div class="flex items-center gap-4 border-l-4 border-purple-600 pl-6 py-2 bg-white/5 rounded-r-2xl transition hover:bg-white/10 cursor-pointer">
+                    <span class="text-xs font-bold text-slate-500">[00:11:19]</span>
+                    <p class="font-bold">Adding Layer Blurs & Gradients</p>
+                </div>
+            </div>
+
+            <a href="https://youtu.be/vonaKEzA0_8?si=5bTSMRPHsK1BQ9pt" target="_blank" class="bg-purple-600 text-white px-12 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl shadow-purple-900/40 hover:bg-white hover:text-purple-600 transition-all inline-flex items-center gap-3">
+                <i class="fa-solid fa-play"></i> Watch Full Tutorial
+            </a>
+        </div>
+
+        <div class="relative" data-aos="zoom-in">
+            <div class="rounded-[60px] overflow-hidden border-[15px] border-white/10 shadow-2xl group">
+                <img src="https://i.ytimg.com/vi/vonaKEzA0_8/maxresdefault.jpg" class="w-full h-[450px] object-cover group-hover:scale-110 transition duration-1000">
+                <div class="absolute inset-0 bg-purple-900/20 group-hover:bg-transparent transition"></div>
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-3xl shadow-2xl text-slate-900 hidden md:block">
+                <p class="text-2xl font-black tracking-tighter">Class 03</p>
+                <p class="text-[10px] font-bold text-purple-600 uppercase">Website Design</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="videoModal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4">
+    <button onclick="closeVideo()" class="absolute top-10 right-10 text-white text-4xl hover:text-blue-500">&times;</button>
+    <div class="w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl">
+        <iframe id="ytPlayer" class="w-full h-full" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+    function openVideo() {
+        const modal = document.getElementById('videoModal');
+        const player = document.getElementById('ytPlayer');
+        // Yahan apni YouTube Playlist ka link dalen
+        player.src = "https://www.youtube.com/embed/videoseries?list=PLu0W_Vlzh0u3k8-nfmYFvT6FvFzZ6Xn8_"; 
+        modal.classList.remove('hidden');
+    }
+
+    function closeVideo() {
+        const modal = document.getElementById('videoModal');
+        const player = document.getElementById('ytPlayer');
+        player.src = ""; // Video stop karne ke liye
+        modal.classList.add('hidden');
+    }
+</script>
+        </div>
+    </section>
+
+    <footer id="enroll" class="bg-slate-950 pt-32 pb-16 px-6 md:px-20 mt-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 relative z-10">
+            <div>
+                <h3 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">Ready to start <br>your <span class="text-blue-600 italic">journey?</span></h3>
+                <p class="text-slate-400 text-lg mb-12">Enroll today and get lifetime access to all course materials and community support.</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-white font-bold"><i class="fa-solid fa-check-circle text-blue-600"></i> Lifetime Access</div>
+                    <div class="flex items-center gap-4 text-white font-bold"><i class="fa-solid fa-check-circle text-blue-600"></i> Expert Support</div>
+                </div>
+            </div>
+            
+            <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-[60px]">
+                <form class="space-y-6">
+                    <div>
+                        <label class="text-[10px] font-black uppercase text-slate-500 mb-2 block tracking-widest">Full Name</label>
+                        <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl text-white outline-none focus:border-blue-600 transition">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase text-slate-500 mb-2 block tracking-widest">Email Address</label>
+                        <input type="email" placeholder="john@example.com" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl text-white outline-none focus:border-blue-600 transition">
+                    </div>
+                    <button class="w-full bg-blue-600 text-white py-6 rounded-[25px] font-black uppercase text-xs tracking-widest shadow-2xl shadow-blue-600/20 hover:bg-white hover:text-blue-600 transition-all duration-500">Confirm Enrollment</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="mt-32 pt-12 border-t border-white/5 text-center">
+            <p class="text-xs font-black text-slate-700 uppercase tracking-[15px]">EDUKON ACADEMY © 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000 });</script>
+    <a href="https://wa.me/923288481557" target="_blank" class="fixed bottom-10 right-10 z-[100] bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all duration-300 group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-20 bg-white text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Support</span>
+</a>
+<a href="admin.html" class="fixed bottom-32 right-10 z-[100] bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-blue-600 transition-all duration-300 group">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="absolute right-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Admin View</span>
+</a>
+</body>
+</html>

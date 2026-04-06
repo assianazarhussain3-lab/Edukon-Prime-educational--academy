@@ -1,0 +1,228 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukon Admin | Student Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #1e293b; }
+        
+        .stat-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease;
+        }
+        .stat-card:hover { transform: translateY(-5px); }
+        
+        .table-container {
+            background: white;
+            border-radius: 30px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        /* --- IPAD & UNIVERSAL RESPONSIVE FIX --- */
+
+/* 1. Prevent Horizontal Scroll (Screen se bahar nikalne se rokne ke liye) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. iPad Air / iPad Mini / Tablets (768px to 1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Navigation ko congested hone se bachayein */
+    nav {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Agar aapka main card flex-row hai, toh usse column kar den */
+    .glass-card {
+        flex-direction: column !important;
+        margin-top: 5rem;
+        border-radius: 25px !important;
+        width: 95% !important;
+    }
+
+    /* Left aur Right sections ko full width kar den */
+    .glass-card > div {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Info Panel (Right Side) ko iPad par thora chota ya hide karne ke liye */
+    .blue-gradient {
+        min-height: auto !important;
+    }
+
+    /* Inputs ko iPad screen ke mutabiq adjust karein */
+    input {
+        font-size: 16px !important; /* Zoom-in issue fix karne ke liye */
+    }
+}
+
+/* 3. Mobile Phones (640px and below) */
+@media only screen and (max-width: 640px) {
+    .glass-card {
+        margin-top: 4rem;
+        padding: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Grid columns ko single column kar den */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Images & Containers Fix */
+img, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+    </style>
+</head>
+<a href="index.html" 
+   class="text-2xl font-black tracking-tighter uppercase hover:opacity-80 transition">
+  EDUKON<span class="text-blue-600">.prime</span>
+</a>
+<body class="p-4 md:p-10">
+
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <div>
+                <h1 class="text-3xl font-black tracking-tighter italic">ADMIN<span class="text-blue-600">.</span>PANEL</h1>
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[4px]">Edukon Academy Ecosystem</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="exportData()" class="px-5 py-2.5 bg-white border border-slate-200 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-50 transition">Export CSV</button>
+                <button onclick="clearData()" class="px-5 py-2.5 bg-red-50 text-red-600 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-red-600 hover:text-white transition">Clear All</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+            <div class="stat-card">
+                <div class="flex justify-between items-center mb-4">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center"><i class="fa-solid fa-users text-sm"></i></div>
+                    <span class="text-[10px] font-black text-green-500">+12%</span>
+                </div>
+                <p class="text-slate-400 text-[10px] font-black uppercase tracking-widest">Total Students</p>
+                <h3 id="totalStudents" class="text-2xl font-black mt-1">0</h3>
+            </div>
+            </div>
+
+        <div class="table-container">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+                <h3 class="font-black text-sm uppercase tracking-widest italic">Registered Users</h3>
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-300 text-xs"></i>
+                    <input type="text" placeholder="Search students..." class="pl-9 pr-4 py-2 bg-slate-50 border border-slate-100 rounded-xl text-xs outline-none focus:border-blue-600 w-64">
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50/50">
+                        <tr class="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                            <th class="px-8 py-5">Student Info</th>
+                            <th class="px-8 py-5">Email Address</th>
+                            <th class="px-8 py-5">Registration Date</th>
+                            <th class="px-8 py-5">Status</th>
+                            <th class="px-8 py-5 text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminTableBody" class="divide-y divide-slate-50">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadAdminData() {
+            const tableBody = document.getElementById('adminTableBody');
+            const totalDisplay = document.getElementById('totalStudents');
+            const students = JSON.parse(localStorage.getItem('edukonStudents')) || [];
+
+            tableBody.innerHTML = '';
+            totalDisplay.innerText = students.length;
+
+            if (students.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="5" class="p-20 text-center"><div class="text-slate-300 mb-2"><i class="fa-solid fa-inbox text-4xl"></i></div><p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">No students registered yet</p></td></tr>`;
+                return;
+            }
+
+            students.reverse().forEach((student, index) => {
+                const row = `
+                    <tr class="hover:bg-blue-50/30 transition group">
+                        <td class="px-8 py-5">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-xs">
+                                    ${student.name.charAt(0)}
+                                </div>
+                                <span class="font-bold text-slate-900 text-sm">${student.name}</span>
+                            </div>
+                        </td>
+                        <td class="px-8 py-5 text-slate-500 text-sm">${student.email}</td>
+                        <td class="px-8 py-5 text-slate-400 text-xs font-medium">${student.date}</td>
+                        <td class="px-8 py-5">
+                            <span class="status-badge bg-green-100 text-green-600">Verified</span>
+                        </td>
+                        <td class="px-8 py-5 text-right">
+                            <button onclick="deleteStudent(${index})" class="text-slate-300 hover:text-red-500 transition"><i class="fa-solid fa-trash-can"></i></button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        function deleteStudent(index) {
+            let students = JSON.parse(localStorage.getItem('edukonStudents')) || [];
+            // Reversing back to match original index before deleting
+            students.reverse();
+            students.splice(index, 1);
+            students.reverse();
+            localStorage.setItem('edukonStudents', JSON.stringify(students));
+            loadAdminData();
+        }
+
+        function clearData() {
+            if(confirm("Are you sure you want to clear all student records?")) {
+                localStorage.removeItem('edukonStudents');
+                loadAdminData();
+            }
+        }
+
+        function exportData() {
+            alert("Export feature coming soon! (Backend required)");
+        }
+
+        // Load data on start
+        window.onload = loadAdminData;
+        // Refresh every 5 seconds to catch new signups
+        setInterval(loadAdminData, 5000);
+    </script>
+</body>
+</html>

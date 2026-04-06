@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing 2026 | Edukon Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        .marketing-card:hover { transform: translateY(-12px); border-color: #ec4899; transition: 0.5s; }
+        .glow-button { box-shadow: 0 0 20px rgba(236, 72, 153, 0.4); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background-color: #ffffff; color: #0f172a; }
+        
+        /* Updated Glass Card for White Background */
+        .glass-card { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03); 
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover { transform: translateY(-5px); border-color: #2563eb; }
+        
+        .play-pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); } 
+            70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); } 
+        }
+           /* --- IPAD & UNIVERSAL RESPONSIVE FIX --- */
+
+/* 1. Prevent Horizontal Scroll (Screen se bahar nikalne se rokne ke liye) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. iPad Air / iPad Mini / Tablets (768px to 1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Navigation ko congested hone se bachayein */
+    nav {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Agar aapka main card flex-row hai, toh usse column kar den */
+    .glass-card {
+        flex-direction: column !important;
+        margin-top: 5rem;
+        border-radius: 25px !important;
+        width: 95% !important;
+    }
+
+    /* Left aur Right sections ko full width kar den */
+    .glass-card > div {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Info Panel (Right Side) ko iPad par thora chota ya hide karne ke liye */
+    .blue-gradient {
+        min-height: auto !important;
+    }
+
+    /* Inputs ko iPad screen ke mutabiq adjust karein */
+    input {
+        font-size: 16px !important; /* Zoom-in issue fix karne ke liye */
+    }
+}
+
+/* 3. Mobile Phones (640px and below) */
+@media only screen and (max-width: 640px) {
+    .glass-card {
+        margin-top: 4rem;
+        padding: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Grid columns ko single column kar den */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Images & Containers Fix */
+img, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+    </style>
+
+</head>
+<body class="bg-[#05070a] text-white">
+
+    <nav class="fixed top-0 w-full z-50 py-6 px-6 md:px-20 flex justify-between items-center bg-[#05070a]/90 backdrop-blur-xl border-b border-white/5">
+        <a href="index.html" 
+   class="text-2xl font-black tracking-tighter uppercase hover:opacity-80 transition">
+  EDUKON<span class="text-blue-600">.prime</span>
+</a>
+        <div class="flex gap-8 items-center">
+            <a href="index.html" class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-white transition">Back to Home</a>
+            <a href="#enroll" class="bg-pink-600 px-8 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-pink-600 transition glow-button">Start Scaling</a>
+        </div>
+    </nav>
+<section class="pt-40 pb-24 px-6 md:px-20 bg-[#050810] text-white">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div data-aos="fade-right">
+
+      <span class="inline-block bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[4px] mb-6">
+        🚀 Digital Marketing Masterclass
+      </span>
+
+      <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6 tracking-tight">
+        Master <span class="text-blue-500">Digital Marketing</span><br>
+        Grow Brands & Generate Revenue
+      </h1>
+
+      <p class="text-slate-400 text-lg mb-8 max-w-xl">
+        Learn SEO, Social Media Marketing, Ads, and Funnels to scale businesses and earn online with real-world strategies.
+      </p>
+
+      <!-- BUTTONS -->
+      <div class="flex flex-wrap gap-4 mb-10">
+        <button class="bg-blue-600 px-8 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-blue-700 transition shadow-lg shadow-blue-900/40">
+          Start Learning
+        </button>
+
+        <button class="border border-white/20 px-8 py-4 rounded-2xl font-black uppercase text-sm tracking-widest hover:bg-white/10 transition">
+          View Modules
+        </button>
+      </div>
+
+      <!-- STATS -->
+      <div class="flex gap-10">
+        <div>
+          <h3 class="text-blue-500 text-2xl font-black">12K+</h3>
+          <p class="text-slate-500 text-sm">Students</p>
+        </div>
+        <div>
+          <h3 class="text-blue-500 text-2xl font-black">80+</h3>
+          <p class="text-slate-500 text-sm">Lessons</p>
+        </div>
+        <div>
+          <h3 class="text-blue-500 text-2xl font-black">4.8★</h3>
+          <p class="text-slate-500 text-sm">Rating</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="relative" data-aos="fade-left">
+
+      <!-- MAIN IMAGE -->
+      <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312" 
+           class="rounded-[30px] shadow-2xl shadow-blue-900/40">
+
+      <!-- FLOATING CARD -->
+      <div class="absolute -bottom-6 -left-6 glass-card p-5 hidden md:block">
+        <p class="text-xs text-slate-400 mb-1">Live Campaign</p>
+        <h4 class="font-bold text-sm">+320% ROI Growth</h4>
+      </div>
+
+      <!-- FLOATING CARD 2 -->
+      <div class="absolute -top-6 -right-6 glass-card p-5 hidden md:block">
+        <p class="text-xs text-slate-400 mb-1">Ad Performance</p>
+        <h4 class="font-bold text-sm">CTR 12.5%</h4>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+    <header class="pt-48 pb-24 px-6 md:px-20 max-w-7xl mx-auto text-center relative">
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-pink-600/10 blur-[120px] -z-10"></div>
+        <span class="bg-pink-500/10 text-pink-500 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[6px] mb-8 inline-white border border-pink-500/20">2026 Strategy</span>
+        <h1 class="text-6xl md:text-9xl font-black tracking-tighter leading-none mb-10">
+            Be the <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-violet-500">Top 1%</span> Marketer.
+        </h1>
+        <p class="text-slate-400 text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed">
+            Sirf posts karna band karein, results generate karna seekhein. SEO, Meta Ads, aur AI-powered content strategy ka mukammal bootcamp.
+        </p>
+    </header>
+
+    <section class="py-24 px-6 md:px-20 bg-white/5 border-y border-white/5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7">
+                <div class="rounded-[50px] overflow-hidden border-[15px] border-white/5 shadow-2xl aspect-video relative group">
+                    <img src="https://i.ytimg.com/vi/qnBhOVH1QQ8/maxresdefault.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                    <a href="https://youtu.be/qnBhOVH1QQ8" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/40">
+                        <div class="w-24 h-24 bg-pink-600 rounded-full flex items-center justify-center text-white text-3xl shadow-2xl">
+                            <i class="fa-solid fa-play ml-1"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="lg:col-span-5">
+                <h2 class="text-4xl font-black mb-8 leading-tight">Complete <br><span class="text-pink-500">24-Hour</span> Masterclass.</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4 items-start p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-pink-600/10 transition cursor-default">
+                        <span class="text-pink-500 font-bold text-xl">01</span>
+                        <p class="text-sm">SEO & Search Console Deep Dive [00:00:53]</p>
+                    </div>
+                    <div class="flex gap-4 items-start p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-pink-600/10 transition cursor-default">
+                        <span class="text-pink-500 font-bold text-xl">02</span>
+                        <p class="text-sm">Meta Ads & Instagram Business Suite [00:01:28]</p>
+                    </div>
+                    <div class="flex gap-4 items-start p-6 bg-white/5 rounded-3xl border border-white/10 hover:bg-pink-600/10 transition cursor-default">
+                        <span class="text-pink-500 font-bold text-xl">03</span>
+                        <p class="text-sm">AI Content Marketing (ChatGPT & Jasper) [00:01:37]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="marketing-card p-10 bg-white/5 rounded-[50px] border border-white/5 transition-all">
+                <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-3xl flex items-center justify-center mb-10 shadow-lg">
+                    <i class="fa-solid fa-chart-line text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-4 uppercase italic">Performance Ads</h3>
+                <p class="text-slate-500 text-sm mb-10 leading-relaxed">Meta aur Google ads ke zariye high-converting funnels banana seekhein.</p>
+                <div class="pt-6 border-t border-white/5 text-[10px] font-black text-pink-500 tracking-[3px] uppercase">Live Demos Included</div>
+            </div>
+
+            <div class="marketing-card p-10 bg-white/5 rounded-[50px] border border-white/5 transition-all">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mb-10 shadow-lg">
+                    <i class="fa-solid fa-magnifying-glass-chart text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-4 uppercase italic">Technical SEO</h3>
+                <p class="text-slate-500 text-sm mb-10 leading-relaxed">Website ko Google ke pehle page par rank karwane ki advanced techniques.</p>
+                <div class="pt-6 border-t border-white/5 text-[10px] font-black text-blue-500 tracking-[3px] uppercase">SEMRush & Ahrefs Tips</div>
+            </div>
+
+            <div class="marketing-card p-10 bg-white/5 rounded-[50px] border border-white/5 transition-all">
+                <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-3xl flex items-center justify-center mb-10 shadow-lg">
+                    <i class="fa-solid fa-robot text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-black mb-4 uppercase italic">AI Marketing</h3>
+                <p class="text-slate-500 text-sm mb-10 leading-relaxed">Content creation aur automation ke liye modern AI tools ka use.</p>
+                <div class="pt-6 border-t border-white/5 text-[10px] font-black text-yellow-500 tracking-[3px] uppercase">ChatGPT 2026 Prompts</div>
+            </div>
+        </div>
+    </section>
+<section id="foundation" class="py-24 px-6 md:px-20 bg-[#0f172a] border-b border-white/5">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        
+        <div>
+            <span class="text-blue-500 font-black text-[10px] uppercase tracking-[4px] mb-4 block">Class 01: Concept</span>
+            <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">Digital Marketing <br><span class="text-blue-400">Kya Hai aur Kyun Hai?</span></h2>
+            
+            <p class="text-slate-400 mb-10 leading-relaxed">
+                Sirf post kar dena marketing nahi hai. Is video mein seekhein ke kaise sahi audience ko target kiya jata hai aur traditional vs digital marketing mein kya farq hai.
+            </p>
+
+            <div class="space-y-4 mb-10">
+                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 group hover:bg-blue-600 transition">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold group-hover:bg-white group-hover:text-blue-600">01</div>
+                    <p class="text-sm font-bold">SEO: Google par bina paise diye rank karna [00:06:07]</p>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 group hover:bg-blue-600 transition">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold group-hover:bg-white group-hover:text-blue-600">02</div>
+                    <p class="text-sm font-bold">Affiliate Marketing: Commission se paise kamana [00:11:08]</p>
+                </div>
+                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10 group hover:bg-blue-600 transition">
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold group-hover:bg-white group-hover:text-blue-600">03</div>
+                    <p class="text-sm font-bold">Real-time Analytics: Customer ka behavior track karna [00:15:07]</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative group">
+            <div class="rounded-[40px] overflow-hidden border-[10px] border-white/5 shadow-2xl aspect-video relative">
+                <img src="https://i.ytimg.com/vi/G6DmDqYLWL8/maxresdefault.jpg" class="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition">
+                <a href="https://youtu.be/G6DmDqYLWL8" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center text-blue-600 text-2xl shadow-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </a>
+            </div>
+            <div class="absolute -bottom-6 -left-6 bg-blue-600 p-6 rounded-3xl shadow-xl hidden md:block">
+                <p class="text-[10px] font-black uppercase tracking-widest text-blue-100 mb-1">Duration</p>
+                <p class="text-2xl font-black">3 Hours</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<section id="strategy-room" class="py-24 px-6 md:px-20 bg-black">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div class="max-w-2xl">
+                <span class="text-pink-500 font-black text-[10px] uppercase tracking-[4px] mb-4 block">Masterclass 03: Strategy</span>
+                <h2 class="text-4xl md:text-6xl font-black text-white leading-tight">Beyond Just <span class="italic text-pink-500">Ads.</span></h2>
+                <p class="text-slate-500 mt-6">Marketing sirf tool chalana nahi, balki psychology aur planning ka naam hai. Is video mein seekhein "4 Ps" aur "Inbound Marketing" ki power.</p>
+            </div>
+            <a href="https://youtu.be/jVgYgN0zcWs" target="_blank" class="bg-white text-black px-10 py-4 rounded-full font-black uppercase text-[10px] tracking-widest hover:bg-pink-600 hover:text-white transition">Watch Full Lesson</a>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-8 rounded-[40px] overflow-hidden border border-white/10 relative group">
+                <img src="https://i.ytimg.com/vi/jVgYgN0zcWs/maxresdefault.jpg" class="w-full h-full object-cover opacity-50 group-hover:scale-105 transition duration-1000">
+                <div class="absolute inset-0 flex items-center justify-center bg-pink-600/10 group-hover:bg-transparent transition">
+                    <i class="fa-solid fa-brain text-6xl text-white/20"></i>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 space-y-4">
+                <div class="p-8 bg-white/5 rounded-[35px] border border-white/5 hover:border-pink-500/30 transition">
+                    <h4 class="text-pink-500 font-black text-xs uppercase mb-2">The 4 Ps</h4>
+                    <p class="text-xs text-slate-400">Product, Price, Place, aur Promotion ka perfect balance [00:05:05].</p>
+                </div>
+                <div class="p-8 bg-white/5 rounded-[35px] border border-white/5 hover:border-pink-500/30 transition">
+                    <h4 class="text-pink-500 font-black text-xs uppercase mb-2">Inbound Marketing</h4>
+                    <p class="text-xs text-slate-400">Customers ko disturb karne ki bajaye unhe attract karna seekhein [00:11:59].</p>
+                </div>
+                <div class="p-8 bg-white/5 rounded-[35px] border border-white/5 hover:border-pink-500/30 transition">
+                    <h4 class="text-pink-500 font-black text-xs uppercase mb-2">Execution</h4>
+                    <p class="text-xs text-slate-400">Campaign ko launch karne aur monitor karne ka 5-step plan [00:02:47].</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="enroll" class="py-24 px-6 md:px-20 bg-white text-slate-900 rounded-t-[80px] relative z-10 shadow-[0_-20px_50px_rgba(0,0,0,0.1)]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-none text-slate-900">
+                        Start Your <br><span class="text-pink-600">Journey</span> Today.
+                    </h2>
+                    <p class="text-slate-500 text-lg mb-12">
+                        Koi sawal hai ya course join karna chahte hain? Form fill karein, humari team aap se jald raabta karegi.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center text-pink-600">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="font-bold">hello@edukon.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="font-bold">+92 300 1234567</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-8 md:p-12 rounded-[50px] border border-slate-100 shadow-xl">
+                    <form action="https://formspree.io/f/your-id-here" method="POST" class="space-y-6 text-left">
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-slate-400">Full Name</label>
+                            <input type="text" name="name" required class="w-full bg-white border border-slate-200 p-4 rounded-2xl focus:outline-none focus:border-pink-500 transition text-slate-900" placeholder="Ali Ahmed">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-slate-400">Email Address</label>
+                            <input type="email" name="email" required class="w-full bg-white border border-slate-200 p-4 rounded-2xl focus:outline-none focus:border-pink-500 transition text-slate-900" placeholder="ali@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-slate-400">Course</label>
+                            <select name="course" class="w-full bg-white border border-slate-200 p-4 rounded-2xl focus:outline-none focus:border-pink-500 transition text-slate-900">
+                                <option>Digital Marketing Basics</option>
+                                <option>Performance Ads</option>
+                                <option>Advanced SEO</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black uppercase tracking-widest mb-2 text-slate-400">Message</label>
+                            <textarea name="message" rows="4" class="w-full bg-white border border-slate-200 p-4 rounded-2xl focus:outline-none focus:border-pink-500 transition text-slate-900" placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-[3px] text-xs hover:bg-pink-600 transition">
+                            Submit Information
+                        </button>
+                    </form> </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#05070a] pt-32 pb-12 px-6 md:px-20 border-t border-white/5 relative z-0">
+        <div class="max-w-7xl mx-auto text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+                <div class="col-span-1 md:col-span-1">
+                    <h2 class="text-2xl font-black text-white tracking-tighter uppercase italic mb-6">
+                        EDUKON<span class="text-pink-500">.</span>GROWTH
+                    </h2>
+                    <p class="text-slate-500 text-xs leading-relaxed mb-8">
+                        2026 ka sabse advanced digital marketing hub.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-pink-600 hover:text-white transition">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-black text-[10px] uppercase tracking-[4px] mb-8">Explore</h4>
+                    <ul class="space-y-4 text-xs font-bold text-slate-500">
+                        <li><a href="index.html" class="hover:text-pink-500 transition">Home Academy</a></li>
+                        <li><a href="course-react.html" class="hover:text-pink-500 transition">Web Development</a></li>
+                        <li><a href="course-uiux.html" class="hover:text-pink-500 transition">UI/UX Design</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-black text-[10px] uppercase tracking-[4px] mb-8">Resources</h4>
+                    <ul class="space-y-4 text-xs font-bold text-slate-500">
+                        <li><a href="#foundation" class="hover:text-pink-500 transition">Marketing Basics</a></li>
+                        <li><a href="#strategy-room" class="hover:text-pink-500 transition">Strategy Room</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-black text-[10px] uppercase tracking-[4px] mb-8">Newsletter</h4>
+                    <form class="relative">
+                        <input type="email" placeholder="Your Email" class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl text-xs focus:outline-none focus:border-pink-500 transition">
+                        <button class="absolute right-2 top-2 bg-pink-600 px-4 py-2 rounded-xl text-[10px] font-black uppercase">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-slate-600 text-[9px] font-bold uppercase tracking-[8px]">EDUKON ACADEMY © 2026</p>
+                <div class="flex gap-8 text-[9px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="#" class="hover:text-white transition">Privacy</a>
+                    <a href="#" class="hover:text-white transition">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+<a href="https://wa.me/923288481557" target="_blank" class="fixed bottom-10 right-10 z-[100] bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all duration-300 group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-20 bg-white text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Support</span>
+</a>
+<a href="admin.html" class="fixed bottom-32 right-10 z-[100] bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-blue-600 transition-all duration-300 group">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="absolute right-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Admin View</span>
+</a>
+</body>
+</html>

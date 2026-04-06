@@ -1,0 +1,387 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Edukon Academy | 2026</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box !important; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            overflow-x: hidden !important; 
+            width: 100%;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        /* Video-Style Spacing */
+        section { 
+            padding: clamp(3rem, 8vw, 8rem) 1.5rem !important; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        @media (min-width: 768px) { section { padding: 6rem 5rem !important; } }
+
+        /* Premium Elements */
+        .bento-card { 
+            background: #ffffff; border: 1px solid #f1f5f9; border-radius: 40px; 
+            transition: 0.4s ease; 
+        }
+        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        
+        .blue-gradient { 
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+        }
+
+        /* Form Fix for Mobile */
+        input, select, textarea { 
+            width: 100% !important; 
+            border-radius: 12px !important; 
+            padding: 12px !important;
+            background: #f8fafc !important;
+            border: 1px solid #e2e8f0 !important;
+        }
+    </style>
+</head>
+    <nav class="fixed top-0 w-full z-50 py-6 px-6 md:px-20 flex justify-between items-center nav-glass">
+         <a href="index.html" 
+   class="text-2xl font-black tracking-tighter uppercase hover:opacity-80 transition">
+  EDUKON<span class="text-blue-600">.prime</span>
+</a>
+        <div class="flex gap-8 items-center">
+            <a href="index.html" class="text-[10px] font-black uppercase tracking-widest hover:text-blue-600 transition">Back to Home</a>
+            <a href="#contact" class="bg-blue-600 text-white px-8 py-2.5 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-slate-900 transition shadow-lg shadow-blue-100">Contact Us</a>
+        </div>
+    </nav>
+
+    <header class="pt-48 pb-32 px-6 md:px-20 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <span class="inline-block px-4 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-[4px] mb-8 border border-blue-100">Learn. Build. Grow.</span>
+                <h1 class="text-6xl md:text-8xl font-['Playfair_Display'] font-black italic tracking-tighter leading-[0.9] mb-10 text-slate-950">
+                    The <span class="blue-gradient-text">Academy</span> for the Next Generation.
+                </h1>
+                <p class="text-slate-500 text-xl leading-relaxed italic">
+                    "Edukon sirf ek website nahi, ek digital revolution hai. Humara maqsad har talib-e-ilm ko wo skills dena hai jo 2026 ki market ki demand hai."
+                </p>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute -inset-10 bg-blue-50 rounded-[100px] blur-3xl opacity-50"></div>
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2071" class="relative rounded-[60px] shadow-2xl" alt="Edukon Students">
+            </div>
+        </div>
+    </header>
+
+    <section class="py-32 bg-slate-50 rounded-[80px] md:rounded-[120px] px-6 md:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6">Our <span class="blue-gradient-text italic">Core DNA.</span></h2>
+                <p class="text-slate-400 font-bold uppercase tracking-[5px] text-xs">Why Edukon stands out</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="section-card p-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-3xl flex items-center justify-center text-2xl mb-8 shadow-xl shadow-blue-100"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 class="text-2xl font-black mb-4">Practical Learning</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Hum theory par nahi, implementation par yaqeen rakhte hain. Har lesson ke saath ek real-world project hota hai.</p>
+                </div>
+                <div class="section-card p-10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-slate-900 text-white rounded-3xl flex items-center justify-center text-2xl mb-8 shadow-xl shadow-slate-100"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-2xl font-black mb-4">Community First</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Edukon ke students ek aisi community ka hissa hain jahan har koi ek doosre ki progress mein madad karta hai.</p>
+                </div>
+                <div class="section-card p-10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-3xl flex items-center justify-center text-2xl mb-8 shadow-xl shadow-green-100"><i class="fa-solid fa-award"></i></div>
+                    <h3 class="text-2xl font-black mb-4">Global Standards</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Humara curriculum Silicon Valley ke standards ko follow karta hai taake aap global market mein compete kar saken.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-white px-6 md:px-20 overflow-hidden">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-24" data-aos="fade-up">
+                <span class="text-blue-600 font-black text-[10px] uppercase tracking-[10px] mb-4 block">The Evolution</span>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter mb-6 text-slate-950">Our <span class="blue-gradient-text italic">Journey.</span></h2>
+                <p class="text-slate-400 font-bold uppercase tracking-[5px] text-xs">How Edukon became a digital powerhouse</p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-slate-100 border-l-2 border-dashed border-blue-200"></div>
+
+                <div class="relative mb-24 flex flex-col md:flex-row items-center" data-aos="fade-right">
+                    <div class="md:w-1/2 md:pr-16 text-left md:text-right mb-8 md:mb-0">
+                        <span class="text-3xl font-black text-blue-600 mb-2 block italic">2022</span>
+                        <h4 class="text-2xl font-black mb-4">The Seed is Sown</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Edukon aik choty se YouTube channel se shuru hui thi, jahan humara maqsad sirf asan Urdu/Hindi mein coding samjhana tha.</p>
+                    </div>
+                    <div class="absolute left-[-10px] md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-xl z-10"></div>
+                    <div class="md:w-1/2 md:pl-16"></div>
+                </div>
+
+                <div class="relative mb-24 flex flex-col md:flex-row items-center" data-aos="fade-left">
+                    <div class="md:w-1/2 md:pr-16"></div>
+                    <div class="absolute left-[-10px] md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-slate-900 rounded-full border-4 border-white shadow-xl z-10"></div>
+                    <div class="md:w-1/2 md:pl-16 text-left">
+                        <span class="text-3xl font-black text-slate-900 mb-2 block italic">2023</span>
+                        <h4 class="text-2xl font-black mb-4">Building the Community</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Humne apna pehla Batch launch kiya aur 1,000+ students ki community banayi jo aaj mukhtalif companies mein kaam kar rahy hain.</p>
+                    </div>
+                </div>
+
+                <div class="relative mb-24 flex flex-col md:flex-row items-center" data-aos="fade-right">
+                    <div class="md:w-1/2 md:pr-16 text-left md:text-right">
+                        <span class="text-3xl font-black text-blue-600 mb-2 block italic">2025</span>
+                        <h4 class="text-2xl font-black mb-4">The LMS Launch</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Edukon ne apni advance Learning Management System (LMS) website launch ki taake students ko structured roadmap aur dashboard mil sakay.</p>
+                    </div>
+                    <div class="absolute left-[-10px] md:left-1/2 transform md:-translate-x-1/2 w-5 h-5 bg-blue-600 rounded-full border-4 border-white shadow-xl z-10"></div>
+                    <div class="md:w-1/2 md:pl-16"></div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-center" data-aos="fade-left">
+                    <div class="md:w-1/2 md:pr-16"></div>
+                    <div class="absolute left-[-10px] md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow-xl z-10 flex items-center justify-center text-white text-[10px]"><i class="fa-solid fa-star"></i></div>
+                    <div class="md:w-1/2 md:pl-16 text-left">
+                        <span class="text-3xl font-black text-green-500 mb-2 block italic">2026</span>
+                        <h4 class="text-2xl font-black mb-4">Shaping the Future</h4>
+                        <p class="text-slate-950 font-bold text-sm leading-relaxed italic">"Aaj Edukon sirf aik academy nahi, balkay AI aur Modern Web Development ka hub ban chuka hy."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section class="py-32 bg-white px-6 md:px-20 overflow-hidden relative">
+        <div class="glow-sphere top-0 right-0 opacity-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div data-aos="fade-right">
+                    <span class="text-blue-600 font-black text-[10px] uppercase tracking-[10px] mb-4 block">Wall of Love</span>
+                    <h2 class="text-5xl md:text-7xl font-black tracking-tighter italic font-['Playfair_Display'] text-slate-950">What Our <span class="blue-gradient-text">Students</span> Say.</h2>
+                </div>
+                <p class="text-slate-600 max-w-sm text-sm leading-relaxed" data-aos="fade-left">
+                    "Edukon ne Pakistan mein coding education ko sirf badla hi nahi, humne use ek **Standard** diya hai. Ye students ke real feedbacks hain."
+                </p>
+            </div>
+
+            <div class="swiper mySwiper pb-16" data-aos="zoom-in">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide section-card p-10 flex flex-col justify-between border-slate-100 hover:border-blue-100 group transition">
+                        <div>
+                            <div class="flex gap-1 text-yellow-400 mb-6 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic mb-10 leading-relaxed text-sm">"Edukon ki coding classes ne mera dar khatam kar diya. Ab main khud responsive websites bana sakta hoon!"</p>
+                        </div>
+                        <div class="flex items-center gap-4 border-t border-slate-100 pt-6 mt-auto">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600 text-lg">AH</div>
+                            <div>
+                                <h4 class="font-black text-sm text-slate-950">Ali Hassan</h4>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Web Dev Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide section-card p-10 flex flex-col justify-between border-slate-100 hover:border-blue-100 group transition">
+                        <div>
+                            <div class="flex gap-1 text-yellow-400 mb-6 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic mb-10 leading-relaxed text-sm">"The best roadmap ever! Step-by-step guidance aur practical projects ne kaam asan kar diya."</p>
+                        </div>
+                        <div class="flex items-center gap-4 border-t border-slate-100 pt-6 mt-auto">
+                            <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center font-bold text-pink-600 text-lg">SM</div>
+                            <div>
+                                <h4 class="font-black text-sm text-slate-950">Sara Malik</h4>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Web Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide section-card p-10 flex flex-col justify-between border-slate-100 hover:border-blue-100 group transition">
+                        <div>
+                            <div class="flex gap-1 text-yellow-400 mb-6 text-xs">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 italic mb-10 leading-relaxed text-sm">"Mujhe source code aur PDF notes boht pasand aye. Lecture ke baad practice karna easy ho jata hai."</p>
+                        </div>
+                        <div class="flex items-center gap-4 border-t border-slate-100 pt-6 mt-auto">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center font-bold text-green-600 text-lg">ZU</div>
+                            <div>
+                                <h4 class="font-black text-sm text-slate-950">Zain Ul Abideen</h4>
+                                <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">UI/UX Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    ```
+
+
+    <section class="py-32 px-6 md:px-20 bg-slate-50 rounded-t-[100px]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-black mb-16 tracking-tighter text-center">What Makes Us <span class="text-blue-600 italic">Edukon?</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-10 bg-white rounded-[40px] border border-slate-100 hover:border-blue-600 transition" data-aos="zoom-in">
+                    <i class="fa-solid fa-laptop-code text-3xl text-blue-600 mb-6"></i>
+                    <h4 class="font-black text-lg mb-4">LMS Dashboard</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Her student ka apna dashboard jahan progress tracking aur downloads available hain.</p>
+                </div>
+                <div class="p-10 bg-white rounded-[40px] border border-slate-100 hover:border-blue-600 transition" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-solid fa-file-pdf text-3xl text-red-500 mb-6"></i>
+                    <h4 class="font-black text-lg mb-4">Premium Resources</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Her class ke sath premium notes, E-books, aur hand-picked cheat sheets.</p>
+                </div>
+                <div class="p-10 bg-white rounded-[40px] border border-slate-100 hover:border-blue-600 transition" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-solid fa-comments text-3xl text-green-500 mb-6"></i>
+                    <h4 class="font-black text-lg mb-4">Discord Support</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">24/7 technical support jahan mentors aapki har query ka foran jawab dete hain.</p>
+                </div>
+                <div class="p-10 bg-white rounded-[40px] border border-slate-100 hover:border-blue-600 transition" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fa-solid fa-rocket text-3xl text-orange-500 mb-6"></i>
+                    <h4 class="font-black text-lg mb-4">Career Support</h4>
+                    <p class="text-slate-500 text-xs leading-relaxed">Course ke bad job search aur portfolio building mein mukammal help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-white px-6 md:px-20 max-w-5xl mx-auto">
+        <div class="text-left mb-16" data-aos="fade-up">
+            <span class="text-blue-600 font-black text-[10px] uppercase tracking-[10px] mb-4 block">Help Center</span>
+            <h2 class="text-5xl font-black tracking-tighter text-slate-950">Common <span class="blue-gradient-text italic">Questions.</span></h2>
+        </div>
+
+        <div class="space-y-4" data-aos="fade-up">
+            <details class="group section-card p-8 cursor-pointer border-slate-100 hover:border-blue-600 transition-all">
+                <summary class="flex justify-between items-center font-black text-lg text-slate-900 list-none">
+                    <span>Edukon Academy join karne ke liye kya requirement hy?</span>
+                    <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition">
+                        <i class="fa-solid fa-plus group-open:rotate-45 transition duration-300"></i>
+                    </div>
+                </summary>
+                <div class="mt-6 text-slate-500 leading-relaxed text-sm border-t border-slate-50 pt-6">
+                    Edukon join karne ke liye kisi professional degree ki zaroorat nahi hy. Laptop aur seekhne ka shoq kafi hy.
+                </div>
+            </details>
+
+            <details class="group section-card p-8 cursor-pointer border-slate-100 hover:border-blue-600 transition-all">
+                <summary class="flex justify-between items-center font-black text-lg text-slate-900 list-none">
+                    <span>Kya courses online hain ya physical?</span>
+                    <div class="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition">
+                        <i class="fa-solid fa-plus group-open:rotate-45 transition duration-300"></i>
+                    </div>
+                </summary>
+                <div class="mt-6 text-slate-500 leading-relaxed text-sm border-t border-slate-50 pt-6">
+                    Edukon ek digital-first academy hy. Tamam courses hamari website (LMS) par available hain.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-20 max-w-7xl mx-auto" id="contact">
+        <div class="grid lg:grid-cols-2 gap-20 items-start">
+            <div data-aos="fade-right">
+                <span class="text-blue-600 font-black text-[10px] uppercase tracking-[10px] mb-6 block">Get In Touch</span>
+                <h2 class="text-6xl font-black tracking-tighter mb-8 text-slate-950 leading-none">Start Your <span class="blue-gradient-text italic">Success Story.</span></h2>
+                <div class="space-y-8">
+                    <div class="flex items-center gap-6 group">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-slate-900 text-sm uppercase tracking-widest">Our Campus</h4>
+                            <p class="text-slate-500 font-bold">Gulberg III, Lahore, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-6 group">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-black text-slate-900 text-sm uppercase tracking-widest">Call Us</h4>
+                            <p class="text-slate-500 font-bold">+92 3288481557</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card bg-slate-50 border-none p-10 md:p-14" data-aos="fade-left">
+                <form action="#" class="space-y-6">
+                    <input type="text" placeholder="Full Name" class="w-full bg-white border border-slate-200 rounded-2xl p-4 outline-none focus:border-blue-600 transition">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white border border-slate-200 rounded-2xl p-4 outline-none focus:border-blue-600 transition">
+                    <textarea rows="4" placeholder="Your Message" class="w-full bg-white border border-slate-200 rounded-2xl p-4 outline-none focus:border-blue-600 transition"></textarea>
+                    <button class="w-full bg-blue-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-slate-950 transition shadow-xl">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-32 pb-12 bg-slate-950 text-white px-6 md:px-20 rounded-t-[100px]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-24">
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-black italic tracking-tighter uppercase">EDUKON<span class="text-blue-600">.</span></h2>
+                    <p class="text-slate-400 text-sm">Pakistan ka sab se advance digital learning platform.</p>
+                    <div class="flex gap-4">
+                        <a href="youtube.com" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-600 transition duration-300">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-black text-[10px] uppercase tracking-widest mb-8 text-blue-500">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400 text-[11px] font-black uppercase">
+                        <li><a href="acadmey-detail.html" class="hover:text-white transition">About Academy</a></li>
+                        <li><a href="courese" class="hover:text-white transition">Course Roadmap</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-[9px] font-black uppercase tracking-[8px]">© 2026 EDUKON ACADEMY • SHAPING FUTURES</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: { delay: 4000 },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            },
+        });
+    </script>
+    <a href="https://wa.me/923288481557" target="_blank" class="fixed bottom-10 right-10 z-[100] bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all duration-300 group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-20 bg-white text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Support</span>
+</a>
+<a href="admin.html" class="fixed bottom-32 right-10 z-[100] bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-blue-600 transition-all duration-300 group">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="absolute right-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Admin View</span>
+</a>
+
+</body>
+</html>

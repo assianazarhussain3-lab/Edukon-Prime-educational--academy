@@ -1,0 +1,219 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Edukon Academy</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: radial-gradient(circle at top right, #eff6ff, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(37, 99, 235, 0.1);
+        }
+
+        .blue-gradient-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blue-gradient-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Floating Label Animation */
+        .input-group input:focus ~ label,
+        .input-group input:not(:placeholder-shown) ~ label {
+            transform: translateY(-24px) scale(0.85);
+            color: #2563eb;
+        }
+        /* --- IPAD & UNIVERSAL RESPONSIVE FIX --- */
+
+/* 1. Prevent Horizontal Scroll (Screen se bahar nikalne se rokne ke liye) */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 2. iPad Air / iPad Mini / Tablets (768px to 1024px) */
+@media only screen and (max-width: 1024px) {
+    /* Navigation ko congested hone se bachayein */
+    nav {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    /* Agar aapka main card flex-row hai, toh usse column kar den */
+    .glass-card {
+        flex-direction: column !important;
+        margin-top: 5rem;
+        border-radius: 25px !important;
+        width: 95% !important;
+    }
+
+    /* Left aur Right sections ko full width kar den */
+    .glass-card > div {
+        width: 100% !important;
+        padding: 2rem !important;
+    }
+
+    /* Info Panel (Right Side) ko iPad par thora chota ya hide karne ke liye */
+    .blue-gradient {
+        min-height: auto !important;
+    }
+
+    /* Inputs ko iPad screen ke mutabiq adjust karein */
+    input {
+        font-size: 16px !important; /* Zoom-in issue fix karne ke liye */
+    }
+}
+
+/* 3. Mobile Phones (640px and below) */
+@media only screen and (max-width: 640px) {
+    .glass-card {
+        margin-top: 4rem;
+        padding: 1.5rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    /* Grid columns ko single column kar den */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* 4. Images & Containers Fix */
+img, video, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+    </style>
+</head>
+<body class="p-6">
+
+    <div class="w-full max-w-md">
+        <div class="text-center mb-10">
+            <a href="index.html" class="text-3xl font-black tracking-tighter uppercase">
+                EDUKON<span class="text-blue-600">.prime</span>
+            </a>
+            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[5px] mt-4">Elevate Your Career</p>
+        </div>
+
+        <div class="glass-card p-10 md:p-12">
+            <h2 class="text-3xl font-black text-slate-900 mb-8 tracking-tight italic">Login <span class="text-blue-600">.</span></h2>
+            
+            <form id="loginForm" class="space-y-6">
+                <div class="relative input-group">
+                    <input type="email" id="email" placeholder=" " required
+                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 pt-6 text-sm outline-none focus:border-blue-600 focus:bg-white transition-all peer">
+                    <label class="absolute left-4 top-4 text-slate-400 text-sm font-bold pointer-events-none transition-all origin-left">
+                        Email Address
+                    </label>
+                </div>
+
+                <div class="relative input-group">
+                    <input type="password" id="password" placeholder=" " required
+                        class="w-full bg-slate-50 border border-slate-100 rounded-2xl p-4 pt-6 text-sm outline-none focus:border-blue-600 focus:bg-white transition-all peer">
+                    <label class="absolute left-4 top-4 text-slate-400 text-sm font-bold pointer-events-none transition-all origin-left">
+                        Password
+                    </label>
+                    <button type="button" onclick="togglePass()" class="absolute right-4 top-5 text-slate-300 hover:text-blue-600 transition">
+                        <i id="eyeIcon" class="fa-solid fa-eye-low-vision"></i>
+                    </button>
+                </div>
+
+                <div class="flex justify-between items-center text-[10px] font-black uppercase tracking-widest px-2">
+                    <label class="flex items-center gap-2 cursor-pointer text-slate-400 hover:text-slate-600">
+                        <input type="checkbox" class="accent-blue-600 w-4 h-4 rounded"> Remember Me
+                    </label>
+                    <a href="register.html" class="text-blue-600 hover:text-slate-900 transition">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="w-full blue-gradient-btn text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 group shadow-xl shadow-blue-100">
+                    Enter Dashboard <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition"></i>
+                </button>
+            </form>
+
+            <div class="mt-10">
+                <div class="relative flex items-center justify-center mb-8">
+                    <div class="absolute w-full h-[1px] bg-slate-100"></div>
+                    <span class="relative bg-white px-4 text-[9px] font-black text-slate-300 uppercase tracking-widest">Or login with</span>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="flex items-center justify-center gap-3 py-4 border border-slate-100 rounded-2xl hover:bg-slate-50 transition text-sm font-bold text-slate-600">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5" alt="Google"> Google
+                    </button>
+                    <button class="flex items-center justify-center gap-3 py-4 border border-slate-100 rounded-2xl hover:bg-slate-50 transition text-sm font-bold text-slate-600">
+                        <i class="fa-brands fa-github text-xl text-slate-900"></i> GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center mt-10 text-slate-400 text-xs font-bold">
+            Don't have an account? 
+            <a href="register.html" class="text-blue-600 uppercase tracking-widest ml-2 hover:underline font-black">Register Now</a>
+        </p>
+    </div>
+
+    <script>
+        // Password Toggle Function
+        function togglePass() {
+            const passInput = document.getElementById('password');
+            const icon = document.getElementById('eyeIcon');
+            if (passInput.type === 'password') {
+                passInput.type = 'text';
+                icon.classList.replace('fa-eye-low-vision', 'fa-eye');
+            } else {
+                passInput.type = 'password';
+                icon.classList.replace('fa-eye', 'fa-eye-low-vision');
+            }
+        }
+
+        // Form Submit Simulation
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Welcome Back!',
+                text: 'Logging you into Edukon Academy...',
+                icon: 'success',
+                timer: 2000,
+                showConfirmButton: false,
+                iconColor: '#2563eb',
+                customClass: { popup: 'rounded-[30px]' }
+            });
+        });
+    </script>
+    <a href="https://wa.me/923288481557 " target="_blank" class="fixed bottom-10 right-10 z-[100] bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition-all duration-300 group">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="absolute right-20 bg-white text-slate-900 text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Support</span>
+</a>
+<a href="admin.html" class="fixed bottom-32 right-10 z-[100] bg-slate-900 text-white w-16 h-16 rounded-full flex items-center justify-center text-xl shadow-2xl hover:bg-blue-600 transition-all duration-300 group">
+    <i class="fa-solid fa-chart-line"></i>
+    <span class="absolute right-20 bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest px-4 py-2 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 transition-all pointer-events-none">Admin View</span>
+</a>
+</body>
+</html>
